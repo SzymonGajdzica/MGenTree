@@ -3,7 +3,7 @@ package main.database
 import main.data.*
 import main.link.FamilyLinkProviderHolder
 import main.link.FamilyLinkProviderHolderImpl
-import java.time.Instant
+import kotlinx.datetime.Instant
 
 class DatabaseMapperImpl : DatabaseMapper {
 

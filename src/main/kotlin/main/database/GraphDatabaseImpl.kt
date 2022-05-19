@@ -43,7 +43,7 @@ class GraphDatabaseImpl : GraphDatabase {
                     MATCH
                     (start:${GraphDatabaseConstant.baseNodeLabel.name()} {${GraphDatabaseConstant.nodeIdKey}: '${graphNode1.id}'}),
                     (end:${GraphDatabaseConstant.baseNodeLabel.name()} {${GraphDatabaseConstant.nodeIdKey}: '${graphNode2.id}'}),
-                    p = shortestPath((start)-[*..100]-(end))
+                    p = shortestPath((start)-[*]-(end))
                     RETURN p
                 """
             ).collect()

@@ -1,5 +1,7 @@
 package main.util
 
+import kotlinx.datetime.Clock
+import kotlinx.datetime.toDateTimePeriod
 import main.data.FamilyLink
 import main.data.Person
 import java.time.LocalDate
@@ -9,10 +11,7 @@ import java.time.temporal.ChronoUnit
 class DataFormatterImpl : DataFormatter {
 
     override fun formatPerson(person: Person): String {
-        val age = ChronoUnit.YEARS.between(
-            LocalDate.ofInstant(person.birthDate, ZoneId.systemDefault()),
-            LocalDate.now()
-        ).toInt()
+        val age = (Clock.System.now() - person.birthDate).inWholeDays / 365
         return buildString {
             append(person.firstName)
             append(" ")

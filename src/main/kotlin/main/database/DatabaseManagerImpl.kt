@@ -11,7 +11,7 @@ class DatabaseManagerImpl : DatabaseManager {
     override fun getPersonList(): List<Person> {
         return graphDatabase.getAllNodes().map {
             databaseMapper.map(it)
-        }
+        }.sortedBy { it.birthDate }
     }
 
     override fun updateFamilyLinks(familyLinkList: List<FamilyLink>) {

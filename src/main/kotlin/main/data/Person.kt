@@ -1,6 +1,6 @@
 package main.data
 
-import java.time.Instant
+import kotlinx.datetime.Instant
 
 interface Person {
     val id: String
